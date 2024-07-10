@@ -50,8 +50,15 @@ const WorkoutPlan = () => {
   }, [userLoggedIn]);
 
   const savePlan = async () => {
-    toast.success('Saved Successfully');
-    await saveWorkoutPlan(currentUser.uid, workoutPlan);
+    try {
+      toast.info('Saving plan...');
+      await saveWorkoutPlan(currentUser.uid, workoutPlan);
+      toast.dismiss(); // Remove the loading toast
+      toast.success('Saved Successfully');
+    } catch (error) {
+      toast.dismiss(); // Remove the loading toast
+      toast.error('Failed to save plan');
+    }
   };
 
   const handleDayClick = (day) => {
