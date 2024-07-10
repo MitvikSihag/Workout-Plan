@@ -217,7 +217,7 @@ const WorkoutPlan = () => {
 
         <div className="w-2/3 text-black text-2xl flex justify-start align-center mx-auto mt-10">
         <ArrowRightIcon className="ml-4 mt-1 h-20 w-20" />
-        <h2>{currentUser.displayName}</h2>
+        <h2>{currentUser?.displayName}</h2>
         </div>
       </div>
       <div className="w-full lg:w-3/4 ml-auto">
