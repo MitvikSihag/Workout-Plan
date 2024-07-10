@@ -11,7 +11,6 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 const WorkoutPlan = () => {
   const { currentUser, userLoggedIn } = useAuth();
-  console.log(currentUser.displayName);
   const navigate = useNavigate();
   const d = new Date();
   let currDay = d.getDay();
