@@ -8,6 +8,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { toast } from 'react-toastify';
 
 const WorkoutPlan = () => {
   const { currentUser, userLoggedIn } = useAuth();
@@ -49,6 +50,7 @@ const WorkoutPlan = () => {
   }, [userLoggedIn]);
 
   const savePlan = async () => {
+    toast.success('Saved Successfully');
     await saveWorkoutPlan(currentUser.uid, workoutPlan);
   };
 
